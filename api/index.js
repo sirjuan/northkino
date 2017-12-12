@@ -12,12 +12,12 @@ app.use([
 
 
 // Priority serve any static files.
-app.use(express.static(path.resolve(__dirname, '../build/static')));
+app.use(express.static(path.resolve(__dirname, '../build/static/')));
 
 
 app.use('/api', require('./routes/api_router'));
 
-app.use('/', require('./routes/root'));
+app.use('/*', require('./routes/root'));
 
 
 app.use(require('./errorHandlers'));
