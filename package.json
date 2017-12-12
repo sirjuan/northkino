@@ -75,7 +75,7 @@
     "start": "npm run start-api",
     "start-api": "node api/index.js",
     "start-dev": "npm-run-all -p watch-css start-dev-server",
-    "deploy": "npm-run-all -s build start-api",
+    
     "start-server": "serve -s build",
     "build": "npm-run-all build-css build-js",
     "build-js": "node scripts/build.js",
