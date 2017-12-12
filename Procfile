@@ -1,2 +1,2 @@
-api: nodemon api/index.js
-web: npm run deploy
+
+web: nodemon api/index.js
