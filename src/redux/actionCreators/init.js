@@ -4,14 +4,11 @@ import { getSchedule } from './schedule'
 import { getData, current } from '../utils'
 
 
-export const init = () => dispatch => {
-  dispatch(getAreas())
-}
+export const init = () => dispatch => dispatch(getAreas());
 
-const getAreas = () => dispatch => {
-  const options = { endpoint: '/TheatreAreas' };
-  return getData(options).then(result => dispatch(addAreas({ payload: result.TheatreAreas.TheatreArea })))
-}
+
+const getAreas = () => dispatch => getData({endpoint: '/TheatreAreas'})
+  .then(result => dispatch(addAreas({ payload: result.TheatreAreas.TheatreArea })))
 
 export const addArea = ({payload}) => dispatch => {
   dispatch(addTheatre({ payload }))
@@ -23,9 +20,9 @@ export const addArea = ({payload}) => dispatch => {
 
 const getScheduleDates = (props) => (dispatch, getState) => {
   const options = { endpoint: '/ScheduleDates', ...props };
-  return getData(options).then(result => {
+  return getData(options).then(result => (
     dispatch(addScheduleDates({ payload: result.Dates.dateTime.map(i => moment(i).format('DD.MM.YYYY')), options  }))
-  })
+  ))
 }
 
 export const getMovies = ({ schedule, area }) => dispatch => {
