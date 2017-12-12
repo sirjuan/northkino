@@ -6,7 +6,7 @@ const express = require('express');
 
 console.log(process.env)
 
-const { MONGO_CREDS, API_PORT, CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_APP_SECRET } = process.env;
+const { MONGO_CREDS, PORT, CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_APP_SECRET } = process.env;
 
 
 
@@ -25,4 +25,4 @@ app.use(require('./errorHandlers'));
 
 
 
-app.listen(API_PORT, () => console.log(`API Running on ${API_PORT}`) );
+app.listen(API_PORT, () => console.log(`API Running on ${PORT}`) );
