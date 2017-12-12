@@ -25,4 +25,4 @@ app.use(require('./errorHandlers'));
 
 
 
-app.listen(API_PORT, () => console.log(`API Running on ${PORT}`) );
+app.listen(PORT, () => console.log(`API Running on ${PORT}`) );
