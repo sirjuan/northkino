@@ -68,11 +68,11 @@
     "xml2js": "^0.4.19"
   },
   "scripts": {
-    "postinstall": "npm i -g npm-run-all",
+    "postinstall": "npm i -g npm-run-all serve",
     "start": "nf start -p 3000",
     "start-dev": "nf start -p 3000",
     "deploy": "npm-run-all -s build start-server",
-    "start-server": "npm serve",
+    "start-server": "serve -s build",
     "build": "npm-run-all build-css build-js",
     "build-js": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
