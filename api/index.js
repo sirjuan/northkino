@@ -1,10 +1,12 @@
 const app = require('express')();
+const path = require('path')
 
 const express = require('express');
 
 const { PORT} = process.env;
-
+app.use(express.static(path.join(__dirname, '../build', 'static')))
 app.use([
+
   require('./setHeaders'),
 ]);
 
