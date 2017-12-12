@@ -65,6 +65,7 @@
     "xml2js": "^0.4.19"
   },
   "scripts": {
+    "postinstall": "npm i -g npm-run-all",
     "start": "node scripts/start.js",
     "start-dev": "nf start -p 3000",
     "build": "npm-run-all build-css build-js",
