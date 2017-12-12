@@ -30,36 +30,6 @@ const moviesReducer = (state = {}, action) => {
   }
 }
 
-
-
-const processDeleteBooking = (state, action) => {
-  const show = state.find(i => i.ID === action.id);
-  const allSeats = show.seats.allSeats.map(row => row.map(seat => seat.status === 'booked' ? {...seat, status: 'free'} : seat))
-  const bookedSeats = show.seats.bookedSeats.filter(i => i.ID !== action.id)
-  return {...show, seats: { allSeats, bookedSeats} };
-}
-
-const processAddBooking = (state, action) => {
-  const show = state.find(i => i.ID === action.booking.id);
-  const filteredState = state.filter(i => i.ID !== action.booking.id)
-  const { seats } = show;
-  action.booking.seats.bookedSeats.forEach(booking => {
-    seats.allSeats[booking.row][booking.seat].status = 'booked'
-  })
-
-  const newShow = {...show, seats };
-  return [...filteredState, newShow ]
-}
-
-const oldscheduleReducer = (state = [], action) => {
-  switch (action.type) {
-    case 'ADD_SCHEDULE': return processSchedule(action.payload)
-    //case 'ADD_BOOKING': return processAddBooking(state, action )
-    //case 'DELETE_BOOKING': return [...state, processDeleteBooking(state, action) ]
-    default: return state
-  }
-}
-
 const processSchedule = (schedule = [], state = {}) => {
   const capacities = {}
   return Array.isArray(schedule)
