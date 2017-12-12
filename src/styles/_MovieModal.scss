@@ -1,0 +1,71 @@
+.rating-image-title {
+  width: auto;
+  height: 30px;
+  margin-right: 6px;
+  margin-top: -4px;
+  animation: pulse 6s infinite;
+}
+
+
+@keyframes pulse {
+  0%   {
+    transform: scale(1.2);
+  }
+  50%  {
+    transform: rotate3d(0, 1, 0, 180deg) scale(1);
+  }
+  100%  {
+    transform:  scale(1.2);
+  }
+}
+
+.schedule-card {
+  button {
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    transition: all 150ms ease-in-out;
+    &:hover {
+      transform: scale(1.2)
+    }
+  }
+  img.movie-poster {
+    transition: transform 200ms ease-in-out;
+    transform-origin: top left;
+    &:hover {
+      transform: scale(1.1);
+
+    }
+  }
+
+  a {
+    color: $red !important;
+    &:hover {
+      color: darken($red, 15%) !important;
+
+    }
+  }
+
+}
+
+.movie-modal {
+  .modal-header {
+
+    span {
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+    }
+  }
+  .modal-body {
+    img {
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 0.5rem;
+    }
+    table {
+      margin-top: 1rem;
+    }
+  }
+
+}
