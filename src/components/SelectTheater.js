@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { addArea } from '../redux/actions';
+import { addArea } from '../redux/actionCreators';
 import { Input } from 'reactstrap'
 
 const SelectTheater = (props) => {

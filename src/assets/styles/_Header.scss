@@ -1,0 +1,73 @@
+.App-header {
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 50px;
+  padding: 5px;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  padding-right: 120px;
+}
+
+.App-header ul {
+  height: 50px;
+  padding: 5px;
+  margin-left: 6%;
+  width: 94%;
+  display: flex;
+  img {
+  position: absolute;
+  background-color: black;
+  top:10px;
+  left: 10px;
+  }
+  li {
+    text-align: center;
+    flex: 1;
+    list-style-type: none;
+    a:hover {
+      text-decoration: none;
+    }
+    div {
+      font-size: 15px;
+      text-transform: uppercase;
+      margin-left: 3px;
+      margin-right: 3px;
+      border-radius: 3px;
+      color: $white;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid #333;
+      padding: 5.25px;
+      transition: all 400ms ease-in-out;
+
+      &:hover {
+        background-color: rgba(255, 193, 7, 0.8);
+        border: 1px solid darken($yellow, 15%);
+        opacity: 0.8;
+      }
+    }
+    .active div {
+      opacity: 1;
+      background-color: $red;
+      border: 1px solid darken($red, 15%);
+      &:hover {
+        cursor:default;
+      }
+    }
+  }
+  select {
+    margin-left: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: black;
+    &:active, &:focus, option {
+      color: black;
+    }
+
+  }
+}
+
+header .select-theater {
+  width: auto;
+}

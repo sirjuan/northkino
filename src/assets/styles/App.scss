@@ -1,0 +1,39 @@
+@import '_variables-kino.scss';
+@import '_variables-bootstrap.scss';
+@import 'bootstrap/scss/bootstrap.scss';
+@import '_MovieModal.scss';
+@import '_Loader.scss';
+@import '_SeatTable.scss';
+@import '_Schedule.scss';
+@import '_Header';
+@import '_Bookings';
+@import '_carousel.scss';
+@import '_MoviePoster.scss';
+@import '_SelectTheater.scss';
+@import '_Transitions';
+
+html, body {
+  background-color: #222;
+  background: url('../images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.content {
+  opacity: 0;
+  animation: main 1000ms 800ms  1 ease-in forwards;
+}
+
+@keyframes main {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+.main {
+  margin-top: 50px;
+  color: $gray-lightest;
+}
+
+
+.d-block {
+  width: 100%;
+}

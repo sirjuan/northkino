@@ -1,0 +1,36 @@
+.modal.fade .modal-dialog.select-theater-modal {
+  transition: transform 0.8s ease-out !important;
+  transform: translate(0, -100%) !important;
+}
+
+.modal.fade.show .modal-dialog.select-theater-modal{
+  transform: translate(0, 0) !important;
+}
+
+.select-theater-modal {
+  text-align: center;
+  margin: 200px auto;
+  .modal.fade .modal-dialog {
+    transition: transform 0.8s ease-out !important;
+    transform: translate(0, -100%) !important;
+  }
+  .modal.fade.show {
+    transition: opacity 0.4s !important;
+  }
+  .modal-header {
+    display: block;
+    border-color: darken($light-transparent, 15%)
+  }
+  .modal-content {
+    background-color: $light-transparent;
+    color: white;
+  }
+  .modal-footer {
+    border-color: darken($light-transparent, 15%);
+    display: block;
+  }
+  select {
+    background-color: $light-transparent;
+    color: white;
+  }
+}

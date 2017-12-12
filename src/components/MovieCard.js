@@ -11,7 +11,7 @@ const MovieCard = ({movie}) => {
 
   return (
       <Card className='moviePoster' inverse>
-        <CardImg width="100%" src={movie.Images.EventMediumImagePortrait} alt="Movie poster" />
+        <CardImg width="100%" src={movie.Images.EventMediumImagePortrait} alt="" />
         <CardImgOverlay>
           { upcoming && <p className='upcomingDateBig'>{moment(movie.dtLocalRelease).format('D.M.')}</p> }
           <CardBody>

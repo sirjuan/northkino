@@ -1,8 +1,6 @@
 import React from 'react'
 import Transition from 'react-transition-group/Transition';
 
-
-
 const defaultStyle = duration => ({
   transition: `opacity ${duration}ms ease-in-out`,
   opacity: 0,
@@ -15,19 +13,14 @@ const transitionStyles = {
   exited: {opacity: 0 }
 };
 
-const Fade = ({ in: inProp, children, duration }) => {
-  return (
+const Fade = ({ in: inProp, children, duration }) => (
   <Transition in={inProp} timeout={duration}>
-    {(state) => {
-      return (
-      <div style={{
-        ...defaultStyle(duration),
-        ...transitionStyles[state]
-      }}>
+    {(state) => (
+      <div style={{ ...defaultStyle(duration), ...transitionStyles[state] }}>
         {children}
       </div>
-    )}}
+    )}
   </Transition>
-)};
+);
 
 export default Fade;

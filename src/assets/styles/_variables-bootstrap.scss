@@ -1,0 +1,117 @@
+// BOOTSTRAP VARIABLES OVERRIDE
+
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+
+@import 'variables-kino.scss';
+
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:  #000 !default;
+
+$grays: (
+  100: $gray-100,
+  200: $gray-200,
+  300: $gray-300,
+  400: $gray-400,
+  500: $gray-500,
+  600: $gray-600,
+  700: $gray-700,
+  800: $gray-800,
+  900: $gray-900
+) !default;
+
+$white:   #ffffff;
+$black:   #000000;
+$blue:    #007bff;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #28a745;
+$teal:    #20c997;
+$cyan:    #17a2b8;
+
+$colors: (
+  'blue': $blue,
+  'blue-dark': $kino-secondary-color,
+  'indigo': $indigo,
+  'purple': $purple,
+  'pink': $pink,
+  'red': $red,
+  'orange': $orange,
+  'yellow': $yellow,
+  'green': $green,
+  'teal': $teal,
+  'cyan': $cyan,
+  'white': $white,
+  'black': $black,
+  'gray': $kino-gray,
+  'gray-dark': $kino-gray-darker,
+  'light-red': $kino-light-red,
+  'light-yellow': $kino-light-yellow,
+  'light-green': $kino-light-green
+);
+
+// Create grayscale
+$gray-dark:             $kino-gray-darkest;
+$gray:                  $kino-gray-darker;
+$gray-light:            $kino-gray;
+$gray-lighter:          $kino-gray-light;
+$gray-lightest:         $kino-gray-lightest;
+
+// Reassign color vars to semantic color scheme
+$theme-colors: (
+  primary: $kino-primary-color,
+  secondary: $kino-secondary-color,
+  success: $green,
+  info: $cyan,
+  warning: $yellow,
+  danger: $red,
+  light: $gray-100,
+  dark: $gray-800
+);
+
+// Links
+$link-color:             $red;
+$link-decoration:        none !default;
+$link-hover-color:       darken($link-color, 15%) !default;
+$link-hover-decoration:  underline !default;
+
+// Fonts
+$font-family-sans-serif: $kino-font;
+
+$font-size-base:         $kino-font-size;
+$font-size-lg:           $kino-font-size-lg;
+$font-size-sm:           $kino-font-size-sm;
+$font-size-xs:           $kino-font-size-xs;
+
+$font-weight-normal:     normal !default;
+$font-weight-bold:       bold !default;
+
+$font-weight-base:       $font-weight-normal !default;
+$line-height-base:       1.5 !default;
+
+$h1-font-size:           $kino-h1;
+$h2-font-size:           $kino-h2;
+$h3-font-size:           1.75rem !default;
+$h4-font-size:           1.5rem !default;
+$h5-font-size:           1.25rem !default;
+$h6-font-size:           1rem !default;
+
+$border-radius:          $kino-border-rounded;
+
+$input-color:            $gray !default;
+
+$nav-tabs-border-color:  $kino-border-color;
+$nav-tabs-border-radius: $kino-border-square;

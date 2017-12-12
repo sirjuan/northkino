@@ -1,0 +1,8 @@
+.carousel {
+  transition: filter 500ms ease-in-out;
+}
+
+.carousel:hover {
+  cursor: pointer;
+  filter: grayscale(100%);
+}
