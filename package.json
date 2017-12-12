@@ -68,7 +68,8 @@
     "xml2js": "^0.4.19"
   },
   "scripts": {
-    "postinstall": "npm i -g npm-run-all serve",
+    "postinstall": "npm i -g npm-run-all serve nodemon",
+    "start-dev-server": "node scripts/start.js",
     "start": "nf start -p 3000",
     "start-dev": "nf start -p 3000",
     "deploy": "npm-run-all -s build start-server",
