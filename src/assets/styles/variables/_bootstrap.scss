@@ -4,7 +4,7 @@
 //
 // Grayscale and brand colors for use across Bootstrap.
 
-@import 'variables-kino.scss';
+//@import 'variables-kino.scss';
 
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -72,7 +72,7 @@ $gray-lightest:         $kino-gray-lightest;
 
 // Reassign color vars to semantic color scheme
 $theme-colors: (
-  primary: $kino-primary-color,
+  primary: $red,
   secondary: $kino-secondary-color,
   success: $green,
   info: $cyan,

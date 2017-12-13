@@ -11,10 +11,10 @@
     right: 0px;
     min-height: 100px;
     padding: 5px;
-    border: 1px solid $gray;
+    border: 1px solid rgba(255,255,255,0.35);
     border-radius: 3px;
     min-width: 200px;
-    background: $dark-transparent;
+    background: rgba(255,255,255,0.3);
     z-index: 8925983495;
     opacity: 0;
     transform: scale(0);
@@ -36,18 +36,21 @@
 
 .bookings-table {
   margin: 0;
+  font-size: 0.75rem;
   th {
-    font-size: 0.75rem;
+
     border-top: none;
     padding-top: 6px;
     padding-bottom: 6px;
     border-bottom-width: 1.5px !important;
+    border-color: rgba(255,255,255,0.3) !important;
   }
   td {
-    font-size: 0.75rem;
+    //font-size: 0.75rem;
     white-space: nowrap;
     padding-top: 6px;
     padding-bottom: 6px;
+    border-color: rgba(255,255,255,0.3) !important;
   }
   button {
     padding: 1px 4px;

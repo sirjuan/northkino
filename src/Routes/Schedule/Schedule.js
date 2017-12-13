@@ -6,10 +6,15 @@ import { dispatch } from '../../redux/store'
 import { Fade } from '../../components';
 import { Button, Row, Col } from 'reactstrap'
 import ScheduleCard from './ScheduleCard'
-import moment from 'moment'
+
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css';
 
+import moment from 'moment'
+import 'moment/locale/fi';
+moment.locale('fi');
+
+console.log(moment.locales())
 const duration = 500;
 
 class Schedule extends Component {
@@ -48,6 +53,7 @@ class Schedule extends Component {
               onChange={this.handleChange}
               customInput={<DatePickerButton />}
               dateFormat="DD.MM.YYYY"
+              locale='fi-fi'
               includeDates={dates.map(date => moment(date, "DD.MM.YYYY"))}
             />
           </Col>

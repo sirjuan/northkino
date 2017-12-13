@@ -4,7 +4,7 @@ import { Row, Col, Container } from 'reactstrap';
 import Carousel from './Carousel'
 import { Fade } from '../../components';
 
-const duration = 500;
+const duration = 1000;
 
 class Home extends Component {
 
@@ -25,10 +25,10 @@ class Home extends Component {
     return  (
       <div>
         <Fade in={this.state.animated} duration={duration}>
-          <Container style={{maxWidth: '800px'}}>
+          <Container className='home-container'>
             { current.length > 0 &&
               <div>
-              <Row style={{marginTop: '50px', marginBottom: '15px'}}>
+              <Row className='row-title'>
                 <Col>
                   <h1>Ohjelmistossa nyt</h1>
                 </Col>
@@ -41,9 +41,11 @@ class Home extends Component {
               </Row>
             </div>
             }
+          </Container>
+            <Container className='home-container'>
             { upcoming.length > 0 &&
               <div>
-                <Row style={{marginTop: '30px', marginBottom: '15px'}}>
+                <Row className='row-title'>
                   <Col>
                     <h1>Tulossa</h1>
                   </Col>

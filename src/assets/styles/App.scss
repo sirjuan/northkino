@@ -1,39 +1,43 @@
-@import '_variables-kino.scss';
-@import '_variables-bootstrap.scss';
-@import 'bootstrap/scss/bootstrap.scss';
-@import '_MovieModal.scss';
-@import '_Loader.scss';
-@import '_SeatTable.scss';
-@import '_Schedule.scss';
-@import '_Header';
-@import '_Bookings';
-@import '_carousel.scss';
-@import '_MoviePoster.scss';
-@import '_SelectTheater.scss';
-@import '_Transitions';
+@import 'variables/kino';
+@import 'variables/bootstrap';
+
+@import 'bootstrap/scss/bootstrap';
+
+@import 'partials/header';
+@import 'partials/home';
+@import 'partials/schedule';
+@import 'partials/movieModal';
+@import 'partials/loader';
+@import 'partials/seatTable';
+@import 'partials/bookings';
+@import 'partials/carousel';
+@import 'partials/moviePoster';
+@import 'partials/selectTheater';
+@import 'partials/common';
+@import 'partials/datepicker';
+
+@import 'animations/transitions';
+@import 'animations/keyframes';
+
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans');
 
 html, body {
   background-color: #222;
   background: url('../images/background.jpg') no-repeat center center fixed;
   background-size: cover;
+  font-family: 'Alegreya Sans', sans-serif;
 }
 
 .content {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  height: 100%;
   opacity: 0;
-  animation: main 1000ms 800ms  1 ease-in forwards;
-}
-
-@keyframes main {
-  from { opacity: 0 }
-  to { opacity: 1 }
+  animation: fade 2000ms 800ms 1 ease-in forwards;
 }
 
 .main {
-  margin-top: 50px;
+  //margin-top: 50px;
   color: $gray-lightest;
-}
-
-
-.d-block {
-  width: 100%;
 }

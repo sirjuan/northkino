@@ -1,0 +1,35 @@
+.react-datepicker__triangle {
+  display: none;
+}
+
+.react-datepicker,
+.react-datepicker__header {
+  background-color: $dark-transparent !important;
+  border-color: rgba(255,255,255,0.3) !important;
+  color: white;
+}
+
+.react-datepicker__current-month,
+.react-datepicker-time__header,
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+  text-transform: capitalize;
+  color: white !important;
+}
+
+.react-datepicker__day--selected {
+  background-color: $red !important;
+}
+
+.react-datepicker__day:not(.react-datepicker__day--disabled) {
+  transition: all 500ms ease-in-out;
+  &:hover {
+    background-color: $yellow !important;
+  }
+}
+
+.react-datepicker__day--disabled {
+  cursor: default;
+  color: #555 !important;
+}

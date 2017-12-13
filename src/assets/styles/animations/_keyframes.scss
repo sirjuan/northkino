@@ -1,0 +1,38 @@
+@keyframes fade {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1.2) }
+  50%  { transform: rotate3d(0, 1, 0, 180deg) scale(1) }
+  100%  { transform:  scale(1.2) }
+}
+
+@keyframes rotateLoader {
+  0% {
+    transform: rotate(0deg) scale(1);
+    border-left-color: $red;
+    border-right-color: $red;
+  }
+  25% {
+    border-left-color: $green;
+    border-right-color: $green;
+    transform: rotate(720deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(1440deg) scale(1);
+    border-left-color: $yellow;
+    border-right-color: $yellow;
+  }
+  75% {
+    border-left-color: $blue;
+    border-right-color: $blue;
+    transform: rotate(2160deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(2880deg) scale(1);
+    border-left-color: $red;
+    border-right-color: $red;
+  }
+}

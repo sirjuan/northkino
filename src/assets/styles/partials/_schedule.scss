@@ -1,0 +1,30 @@
+@media (max-width: 992px) {
+  .schedule-card {
+    .card-img-overlay {
+      position: static !important;
+    }
+    .card-img-top {
+      display: none;
+    }
+  }
+}
+
+.schedule-card {
+  max-width: 1150px;
+  margin: auto;
+  overflow-y: auto;
+  background: black;
+  .card-img-top {
+    opacity: 0.3;
+    filter: grayscale(100%);
+  }
+}
+
+.schedule-card-fade {
+  opacity: 0;
+}
+
+.schedule-card-fade-in {
+  opacity: 1;
+  transition: opacity 1000ms 500ms ease-in;
+}

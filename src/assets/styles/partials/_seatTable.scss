@@ -1,7 +1,6 @@
 .seat-table {
   display: table;
   text-align: center;
-  //border: 1px solid rgba(0,0,0,.1);
   width: 100%;
   ul {
     white-space: nowrap;
@@ -19,11 +18,7 @@
       background-color: #fff;
       border: 1px solid #c8c8c8;
       border-radius: 2px;
-
-
-
       &:hover {
-
       }
       span {
         text-align: center;
@@ -31,14 +26,12 @@
         display: table;
       }
     }
-
     li.free, li.booked {
-      transition: transform 200ms ease-in-out;
+      transition: all 200ms ease-in-out;
       &:hover {
         transform: scale(1.2)
       }
     }
-
     li.booked {
       background: #00b9f5;
       border: 1px solid #00b9f5;
@@ -78,7 +71,7 @@
       border: 0;
       background: none;
       float: left;
-  }
+    }
   }
 }
 
@@ -96,7 +89,6 @@
     max-height: 620px;
     overflow-y: auto;
   }
-
 }
 
 .reservation-table {
@@ -115,57 +107,6 @@
   }
 }
 
-.scale-enter {
-  transform-origin: top;
-  transform: scaleY(0);
-  //width: 100%;
-}
-
-.scale-enter.scale-enter-active {
-  transform: scaleY(1);
-  transition: all 500ms ease-in-out;
-}
-
-.scale-exit {
-  td {
-    transition: border 300ms linear;
-    transition: padding 100ms linear;
-    .r-cell {
-      overflow: hidden;
-      transition: all 100ms 100ms linear;
-      transform: scale(1)
-    }
-  }
-}
-
-.scale-exit.scale-exit-active {
-  td {
-    padding: 0;
-    border: none;
-    .r-cell {
-      max-height: 0;
-      transform: scaleY(0);
-      max-height: 25px;
-    }
-  }
-}
-
-.fadeIn-enter {
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: all 500ms ease-in-out;
-}
-
-.fadeIn-enter.fadeIn-enter-active {
-  transform: scaleY(1);
-}
-
-.fadeIn-exit {
-  transform-origin: top;
-  transform: scaleY(1);
-  transition: all 500ms ease-in-out;
-}
-
-.fadeIn-exit.fadeIn-exit-active {
-  transform: scaleY(0);
+.d-block {
+  width: 100%;
 }

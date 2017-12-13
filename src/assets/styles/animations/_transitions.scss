@@ -1,0 +1,93 @@
+.fade-enter {
+  opacity: 0;
+  width: 100%;
+  position: absolute;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: all 500ms 800ms ease-in;
+}
+
+.fade-exit {
+  position: absolute;
+  opacity: 1;
+  width: 100%;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0.01;
+  transition: all 800ms ease-in;
+}
+
+.scale-enter {
+  transform-origin: top;
+  transform: scaleY(0);
+  //width: 100%;
+}
+
+.scale-enter.scale-enter-active {
+  transform: scaleY(1);
+  transition: all 500ms ease-in-out;
+}
+
+.scale-exit {
+  td {
+    transition: border 300ms linear;
+    transition: padding 100ms linear;
+    .r-cell {
+      overflow: hidden;
+      transition: all 100ms 100ms linear;
+      transform: scale(1)
+    }
+  }
+}
+
+.scale-exit.scale-exit-active {
+  td {
+    padding: 0;
+    border: none;
+    .r-cell {
+      max-height: 0;
+      transform: scaleY(0);
+      max-height: 25px;
+    }
+  }
+}
+
+.fadeIn-enter {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: all 500ms ease-in-out;
+}
+
+.fadeIn-enter.fadeIn-enter-active {
+  transform: scaleY(1);
+}
+
+.fadeIn-exit {
+  transform-origin: top;
+  transform: scaleY(1);
+  transition: all 500ms ease-in-out;
+}
+
+.fadeIn-exit.fadeIn-exit-active {
+  transform: scaleY(0);
+}
+
+.pageSlider-enter {
+  transform: translate3d(100%, 0, 0);
+}
+
+.pageSlider-enter.pageSlider-enter-active {
+  transform: translate3d(0, 0, 0);
+  transition: all 600ms;
+}
+.pageSlider-exit {
+  transform: translate3d(0, 0, 0);
+}
+
+.pageSlider-exit.pageSlider-exit-active {
+  transform: translate3d(-100%, 0, 0);
+  transition: all 600ms;
+}
