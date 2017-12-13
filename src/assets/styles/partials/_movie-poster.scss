@@ -38,38 +38,38 @@
     transition: filter 3s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     .upcomingDateBig {
       position: absolute;
-      color: $yellow;
+      background-color: rgba($black, 0.4);
+      color: lighten($red, 10%);
       top: 35%;
-      bottom: 0;
       left: 0;
       right: 0;
       font-size: 4em;
-      font-weight: 700;
+      font-weight: 900;
       text-shadow:
-        1px 1px 0 rgba(0,0,0,0.3),
-        -1px 1px 0 rgba(0,0,0,0.3),
-        1px -1px 0 rgba(0,0,0,0.3),
-        -1px -1px 0 rgba(0,0,0,0.3),
-        0px 1px 0 rgba(0,0,0,0.3),
-        0px -1px 0 rgba(0,0,0,0.3),
-        -1px 0px 0 rgba(0,0,0,0.3),
-        1px 0px 0 rgba(0,0,0,0.3),
-        2px 2px 0 rgba(0,0,0,0.3),
-        -2px 2px 0 rgba(0,0,0,0.3),
-        2px -2px 0 rgba(0,0,0,0.3),
-        -2px -2px 0 rgba(0,0,0,0.3),
-        0px 2px 0 rgba(0,0,0,0.3),
-        0px -2px 0 rgba(0,0,0,0.3),
-        -2px 0px 0 rgba(0,0,0,0.3),
-        2px 0px 0 rgba(0,0,0,0.3),
-        1px 2px 0 rgba(0,0,0,0.3),
-        -1px 2px 0 rgba(0,0,0,0.3),
-        1px -2px 0 rgba(0,0,0,0.3),
-        -1px -2px 0 rgba(0,0,0,0.3),
-        2px 1px 0 rgba(0,0,0,0.3),
-        -2px 1px 0 rgba(0,0,0,0.3),
-        2px -1px 0 rgba(0,0,0,0.3),
-        -2px -1px 0 rgba(0,0,0,0.3);
+        1px 1px 0 rgba(darken($red, 25%),0.1),
+        -1px 1px 0 rgba(darken($red, 25%),0.1),
+        1px -1px 0 rgba(darken($red, 25%),0.1),
+        -1px -1px 0 rgba(darken($red, 25%),0.1),
+        0px 1px 0 rgba(darken($red, 25%),0.1),
+        0px -1px 0 rgba(darken($red, 25%),0.1),
+        -1px 0px 0 rgba(darken($red, 25%),0.1),
+        1px 0px 0 rgba(darken($red, 25%),0.1),
+        2px 2px 0 rgba(darken($red, 25%),0.1),
+        -2px 2px 0 rgba(darken($red, 25%),0.1),
+        2px -2px 0 rgba(darken($red, 25%),0.1),
+        -2px -2px 0 rgba(darken($red, 25%),0.1),
+        0px 2px 0 rgba(darken($red, 25%),0.1),
+        0px -2px 0 rgba(darken($red, 25%),0.1),
+        -2px 0px 0 rgba(darken($red, 25%),0.1),
+        2px 0px 0 rgba(darken($red, 25%),0.1),
+        1px 2px 0 rgba(darken($red, 25%),0.1),
+        -1px 2px 0 rgba(darken($red, 25%),0.1),
+        1px -2px 0 rgba(darken($red, 25%),0.1),
+        -1px -2px 0 rgba(darken($red, 25%),0.1),
+        2px 1px 0 rgba(darken($red, 25%),0.1),
+        -2px 1px 0 rgba(darken($red, 25%),0.1),
+        2px -1px 0 rgba(darken($red, 25%),0.1),
+        -2px -1px 0 rgba(darken($red, 25%),0.1);
       opacity: 1;
       transition: all 0.5s 0.1s linear;
     }
@@ -91,9 +91,7 @@
       transition: all 1s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     button {
-      animation-name: wiggle;
-      animation-duration: 0.8s;
-      animation-iteration-count: infinite;
+      animation: wiggle 0.8s infinite;
     }
   }
 }
@@ -133,14 +131,6 @@
     text-align: center;
     width: 100%;
     margin: -20px;
-}
-
-@keyframes wiggle {
-    0% { transform: rotate(0deg);}
-    20% { transform: rotate(-6deg);}
-    80% { transform: rotate(6deg);}
-    100% { transform: rotate(0deg);}
-    to {top: 200px;}
 }
 
 .nameList+.nameList:before {

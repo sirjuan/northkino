@@ -2,8 +2,7 @@ import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Table } from 'reactstrap';
 import { addBooking, toggleThankYouModal, clearBookingModal, toggleLoader } from '../../redux/actions'
 import { dispatch } from '../../redux/store'
-
-import moment from 'moment'
+import { timeToStr, dateToStr } from '../../redux/utils'
 
 class ConfirmModal extends React.Component {
 
@@ -44,8 +43,8 @@ class ConfirmModal extends React.Component {
                 <tr>
                   <td>{show.theatre}</td>
                   <td>{show.auditorium}</td>
-                  <td>{moment(show.showStart).format('D.M.YYYY')}</td>
-                  <td>{moment(show.showStart).format('H:mm')} - {moment(show.showEnd).format('H:mm')}</td>
+                  <td>{dateToStr(show.showStart)}</td>
+                  <td>{timeToStr(show.showStart)} - {timeToStr(show.showEnd)}</td>
                   <td>{seat.price.name}</td>
                   <td>{seat.price.price} €</td>
                 </tr>

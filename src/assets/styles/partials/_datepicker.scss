@@ -19,17 +19,31 @@
 }
 
 .react-datepicker__day--selected {
-  background-color: $red !important;
+  background-color: rgba($red, 0.6) !important;
 }
 
 .react-datepicker__day:not(.react-datepicker__day--disabled) {
-  transition: all 500ms ease-in-out;
+  transition: all 300ms ease-in-out;
   &:hover {
-    background-color: $yellow !important;
+    background-color: rgba($yellow, 0.4) !important;
   }
 }
 
 .react-datepicker__day--disabled {
   cursor: default;
   color: #555 !important;
+}
+
+.react-datepicker-wrapper {
+  button {
+    background-color: rgba($red, 0.6) !important;
+    &:hover {
+      background-color: darken($red, 15%) !important;
+    }
+  }
+}
+
+.react-datepicker-popper {
+  transform-origin: top left;
+  transition: opacity 500ms ease-in-out;
 }

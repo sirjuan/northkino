@@ -1,9 +1,9 @@
 import React from 'react'
-import moment from 'moment';
 import { Table, Button } from 'reactstrap'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { deleteBooking } from '../../redux/actions';
 import { dispatch } from '../../redux/store'
+import { dateToStr, timeToStr } from '../../redux/utils'
 
 class BookingsTable extends React.Component {
 
@@ -41,8 +41,8 @@ class BookingsTable extends React.Component {
                   <tr>
                     <td><div className='r-cell'>{booking.title}</div></td>
                     <td><div className='r-cell'>{booking.theatre}, {booking.auditorium}</div></td>
-                    <td><div className='r-cell'>{moment(booking.showStart).format('D.M.YYYY')}</div></td>
-                    <td><div className='r-cell'>{moment(booking.showStart).format('H:mm')} - {moment(booking.showEnd).format('H:mm')}</div></td>
+                    <td><div className='r-cell'>{dateToStr(booking.showStart)}</div></td>
+                    <td><div className='r-cell'>{timeToStr(booking.showStart)} - {timeToStr(booking.showEnd)}</div></td>
                     <td><div className='r-cell'>{booking.seats.bookedSeats.length}</div></td>
                     <td><div className='r-cell'><Button size='sm' color='danger' onClick={() => this.handleClick(booking)}>Poista varaus</Button></div></td>
                   </tr>

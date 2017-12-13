@@ -24,9 +24,7 @@ class CurrentMovies extends Component {
       <div>
         <Fade in={this.state.animated} duration={duration}>
           <CardColumns>
-              {current.map(item => (
-                  <MovieCard movie={item} />
-              ))}
+              {current.map(item => <MovieCard key={item.ID} movie={item} />)}
           </CardColumns>
         </Fade>
       </div>

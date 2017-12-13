@@ -1,0 +1,20 @@
+.movie-modal {
+  .modal-header {
+    span {
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+    }
+  }
+  .modal-body {
+    img {
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 0.5rem;
+    }
+    table {
+      margin-top: 1rem;
+    }
+  }
+}

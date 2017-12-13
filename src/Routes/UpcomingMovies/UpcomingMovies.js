@@ -24,7 +24,7 @@ class UpcomingMovies extends Component {
       <div>
         <Fade in={this.state.animated} duration={duration}>
           <CardColumns>
-              {upcoming.map(item => <MovieCard movie={item} />)}
+              {upcoming.map(item => <MovieCard key={item.ID} movie={item} />)}
           </CardColumns>
         </Fade>
       </div>

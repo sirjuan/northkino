@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardTitle, CardText, CardImg, CardImgOverlay, Table, Row, Col, Button } from 'reactstrap';
-import moment from 'moment'
+import { dateToStr, timeToStr } from '../../redux/utils';
 
 const ScheduleCard = ({movie = {}, bookings = [], handleClick}) => (
   <Card inverse className='schedule-card'>
@@ -28,16 +28,17 @@ const ScheduleCard = ({movie = {}, bookings = [], handleClick}) => (
                 <th>Teatteri</th>
                 <th>Sali</th>
                 <th>Päivämäärä</th>
-                <th colSpan={2}>Kellonaika</th>
+                <th>Kellonaika</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
               {movie.shows.map(show => (
-                <tr>
+                <tr key={show.id}>
                   <td>{show.theatre}</td>
                   <td>{show.auditorium}</td>
-                  <td>{moment(show.showStart).format('D.M.YYYY')}</td>
-                  <td>{moment(show.showStart).format('H:mm')} - {moment(show.showEnd).format('H:mm')}</td>
+                  <td>{dateToStr(show.showStart)}</td>
+                  <td>{timeToStr(show.showStart)} - {timeToStr(show.showEnd)}</td>
                   <td>
                     {bookings.map(i => i.id).includes(show.id)
                      ? <Button color="success" size='sm'>Varattu</Button>

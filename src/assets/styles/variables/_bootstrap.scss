@@ -29,18 +29,31 @@ $grays: (
   900: $gray-900
 ) !default;
 
-$white:   #ffffff;
-$black:   #000000;
-$blue:    #007bff;
-$indigo:  #6610f2;
-$purple:  #6f42c1;
-$pink:    #e83e8c;
-$red:     #dc3545;
-$orange:  #fd7e14;
-$yellow:  #ffc107;
-$green:   #28a745;
-$teal:    #20c997;
-$cyan:    #17a2b8;
+$white-f:   255,255,255;
+$black-f:   0,0,0;
+$blue-f:    0, 123, 255;
+$indigo-f:  102, 16, 242;
+$purple-f:  111, 66, 193;
+$pink-f:    232, 62, 140;
+$red-f:     220, 53, 69;
+$orange-f:  253, 126, 20;
+$yellow-f:  255, 193, 7;
+$green-f:   40, 167, 69;
+$teal-f:    32, 201, 151;
+$cyan-f:    23, 162, 184;
+
+$white:   rgb(255,255,255);
+$black:   rgb(0,0,0);
+$blue:    rgb(0, 123, 255);
+$indigo:  rgb(102, 16, 242);
+$purple:  rgb(111, 66, 193);
+$pink:    rgb(232, 62, 140);
+$red:     rgb(220, 53, 69);
+$orange:  rgb(253, 126, 20);
+$yellow:  rgb(255, 193, 7);
+$green:   rgb(40, 167, 69);
+$teal:    rgb(32, 201, 151);
+$cyan:    rgb(23, 162, 184);
 
 $colors: (
   'blue': $blue,

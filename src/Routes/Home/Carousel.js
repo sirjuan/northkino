@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
 import { addModalMovie } from '../../redux/actions'
 import { dispatch } from '../../redux/store'
-import { current } from '../../redux/utils'
-import moment from 'moment'
+import { current, dateToStr } from '../../redux/utils'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 class Example extends Component {
@@ -87,7 +86,7 @@ const slides = (movies, handleClick, renderImage, onExiting, onExited) => movies
     >
       <div onClick={() => handleClick(item.ID)}>
         <CarouselCaption
-          captionText={current(item) ? '' : `Tulossa ${moment(item.dtLocalRelease).format('D.M.')}`}
+          captionText={current(item) ? '' : `Tulossa ${dateToStr(item.dtLocalRelease)}`}
           captionHeader={item.Title}
         />
       </div>

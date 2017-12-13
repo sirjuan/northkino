@@ -5,6 +5,7 @@ import { current } from '../../redux/utils'
 import { addBookingModalShow } from '../../redux/actions'
 import { getSchedule } from '../../redux/actionCreators'
 import { dispatch } from '../../redux/store'
+import { dateToStr, timeToStr } from '../../redux/utils'
 
 const processAreas = (arr, movieId) => arr.reduce((acc, cur) => (
   [...acc, ...processDates(Object.values(cur), movieId)]
@@ -114,8 +115,8 @@ class MovieModal extends React.Component {
                   <tr>
                     <td>{show.theatre}</td>
                     <td>{show.auditorium}</td>
-                    <td>{moment(show.showStart).format('D.M.YYYY')}</td>
-                    <td>{moment(show.showStart).format('H:mm')} - {moment(show.showEnd).format('H:mm')}</td>
+                    <td>{dateToStr(show.showStart)}</td>
+                    <td>{timeToStr(show.showStart)} - {timeToStr(show.showEnd)}</td>
                     <td>
                       {bookings.map(i => i.id).includes(show.id)
                        ? <Button color="success" size='sm'>Varattu</Button>

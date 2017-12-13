@@ -1,7 +1,9 @@
 .seat-table {
   display: table;
   text-align: center;
-  width: 100%;
+  //width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
   ul {
     white-space: nowrap;
     padding: 0;
@@ -62,7 +64,7 @@
       position: relative;
     }
       li:first-child {
-      margin: 0 10px 0 15px;
+      margin: 4px 10px 0 15px;
       border-radius: 0;
       -moz-border-radius: 0;
       -webkit-border-radius: 0;
@@ -72,22 +74,6 @@
       background: none;
       float: left;
     }
-  }
-}
-
-.modal {
-  th {
-    border-top: none;
-    border-bottom-width: 1px !important;
-    padding-bottom: 6px;
-  }
-  td {
-    padding-top: 6px;
-    padding-bottom: 6px;
-  }
-  .modal-body {
-    max-height: 620px;
-    overflow-y: auto;
   }
 }
 

@@ -6,10 +6,22 @@ const API_URL = 'https://northkino.herokuapp.com/api/xml'
 export const getData = (params) => axios.get(API_URL, {params}).then(result=>result.data).catch(e => console.log(e))
 
 export const current = item => {
-  const now = new Date();
+  const today = new Date();
   const release = new Date(item.dtLocalRelease)
-  return now >= release;
+  return today >= release;
 }
+
+export const dateToStr = (dt) => {
+  const date = moment(dt).format('D.M.YYYY');
+  const today = moment().format('D.M.YYYY');
+  const isSameYear = moment(dt).format('YYYY') === moment().format('YYYY')
+  if (date === today) return 'Tänään';
+  const tomorrow = moment().add(1, 'days').format('D.M.YYYY')
+  if (date === tomorrow) return 'Huomenna'
+  return isSameYear ? moment(dt).format('D.M.') : date;
+}
+
+export const timeToStr = (date) => moment(date).format('H:mm')
 
 export const processSchedule = (schedule = [], state = {}) => {
   const capacities = {}
@@ -17,7 +29,7 @@ export const processSchedule = (schedule = [], state = {}) => {
 
     ? schedule.reduce((acc,item) => {
 
-        const date = moment(item.dttmShowStart).format('DD.MM.YYYY')
+        const date = moment(item.dttmShowStart).format('DD.MM.YYYY');
 
         if (acc[date] && acc[date].map(i => i.ID).includes(item.ID)) {
           return acc;
@@ -25,7 +37,7 @@ export const processSchedule = (schedule = [], state = {}) => {
 
         const capacity = capacities[item.TheatreAuditriumID]
           ? capacities[item.TheatreAuditriumID]
-          : rnd(100, 300);
+          : rnd(60, 150);
 
         const seats = arrangeSeats(capacity, item.dttmShowStart);
 

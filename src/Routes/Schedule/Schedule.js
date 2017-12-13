@@ -14,7 +14,6 @@ import moment from 'moment'
 import 'moment/locale/fi';
 moment.locale('fi');
 
-console.log(moment.locales())
 const duration = 500;
 
 class Schedule extends Component {
@@ -38,13 +37,12 @@ class Schedule extends Component {
 
   render = () => {
     const { bookings, dates, selectedDate } = this.props;
-    const { schedule = [] } = this.state;
-    console.log(dates)
+    const { schedule = [], animated } = this.state;
 
     const scheduleByMovie = Object.values(processSchedule(schedule));
-
+    
     return (
-      <div>
+      <div className='schedule'>
         <Row>
           <Col style={{textAlign: 'center', padding: 20}}>
             Vaihda päivä:
@@ -58,8 +56,10 @@ class Schedule extends Component {
             />
           </Col>
         </Row>
-        <Fade in={this.state.animated} duration={duration}>
-          { scheduleByMovie.map(movie => <ScheduleCard movie={movie} bookings={bookings} handleClick={this.handleClick}/>)}
+        <Fade in={animated} duration={duration}>
+          { scheduleByMovie.map(movie => (
+            <ScheduleCard key={movie.eventId} movie={movie} bookings={bookings} handleClick={this.handleClick}/>
+          ))}
         </Fade>
       </div>
     );
@@ -86,7 +86,7 @@ const processSchedule = schedule => schedule.reduce((acc, cur) => {
     [eventId]: { ...acc[eventId], shows: [...acc[eventId].shows, show]}
   } : {
     ...acc,
-    [eventId]: {...movieDetails, shows: [show]}}
+    [eventId]: {...movieDetails, eventId, shows: [show]}}
 },{})
 
 class DatePickerButton extends React.Component {

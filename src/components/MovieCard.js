@@ -2,8 +2,7 @@ import React from 'react';
 import { Card, CardTitle, CardText, CardImg, CardImgOverlay, CardFooter, CardBody, Button } from 'reactstrap';
 import { addModalMovie } from '../redux/actions';
 import { dispatch } from '../redux/store'
-import { current } from '../redux/utils'
-import moment from 'moment'
+import { current, dateToStr } from '../redux/utils'
 
 const MovieCard = ({movie}) => {
   const seeMore = () => dispatch(addModalMovie({payload: movie}));
@@ -13,9 +12,9 @@ const MovieCard = ({movie}) => {
       <Card className='moviePoster' inverse>
         <CardImg width="100%" src={movie.Images.EventMediumImagePortrait} alt="" />
         <CardImgOverlay>
-          { upcoming && <p className='upcomingDateBig'>{moment(movie.dtLocalRelease).format('D.M.')}</p> }
+          { upcoming && <p className='upcomingDateBig'>{dateToStr(movie.dtLocalRelease)}</p> }
           <CardBody>
-            { upcoming && <p className='upcomingDate'>Tulossa {moment(movie.dtLocalRelease).format('D.M.')}</p> }
+            { upcoming && <p className='upcomingDate'>Tulossa {dateToStr(movie.dtLocalRelease)}</p> }
             <CardTitle>{movie.Title}</CardTitle>
             <CardText>{movie.ShortSynopsis}</CardText>
           </CardBody>

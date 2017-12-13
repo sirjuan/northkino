@@ -3,18 +3,20 @@
 
 @import 'bootstrap/scss/bootstrap';
 
+@import 'partials/modals';
 @import 'partials/header';
 @import 'partials/home';
 @import 'partials/schedule';
-@import 'partials/movieModal';
+@import 'partials/movie-modal';
 @import 'partials/loader';
-@import 'partials/seatTable';
+@import 'partials/seat-table';
 @import 'partials/bookings';
 @import 'partials/carousel';
-@import 'partials/moviePoster';
-@import 'partials/selectTheater';
+@import 'partials/movie-poster';
+@import 'partials/select-theater';
 @import 'partials/common';
 @import 'partials/datepicker';
+
 
 @import 'animations/transitions';
 @import 'animations/keyframes';

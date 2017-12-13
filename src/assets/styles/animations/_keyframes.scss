@@ -9,6 +9,13 @@
   100%  { transform:  scale(1.2) }
 }
 
+@keyframes wiggle {
+    0% { transform: rotate(0deg);}
+    20% { transform: rotate(-6deg);}
+    80% { transform: rotate(6deg);}
+    100% { transform: rotate(0deg);}
+}
+
 @keyframes rotateLoader {
   0% {
     transform: rotate(0deg) scale(1);

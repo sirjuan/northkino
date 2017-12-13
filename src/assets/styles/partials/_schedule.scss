@@ -1,3 +1,9 @@
+.schedule {
+  button {
+    padding: 0.1rem 0.5rem;
+  }
+}
+
 @media (max-width: 992px) {
   .schedule-card {
     .card-img-overlay {
@@ -14,9 +20,26 @@
   margin: auto;
   overflow-y: auto;
   background: black;
-  .card-img-top {
+  img.card-img-top {
     opacity: 0.3;
     filter: grayscale(100%);
+  }
+  img.movie-poster {
+    transition: transform 200ms ease-in-out;
+    transform-origin: top left;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  td, th {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+  th {
+    border-color: rgba(255,255,255,0.2) !important;
+  }
+  td {
+    border-color: rgba(255,255,255,0.3);
   }
 }
 

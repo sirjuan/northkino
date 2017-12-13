@@ -2,12 +2,10 @@ import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Table } from 'reactstrap';
 import { showConfirmModal } from '../../../redux/actions'
 import { dispatch } from '../../../redux/store'
+import { dateToStr, timeToStr } from '../../../redux/utils'
 import { Form as FinalForm, Field } from 'react-final-form';
 import { Form } from 'reactstrap';
-
 import SeatTable from './SeatTable'
-
-import moment from 'moment'
 
 class BookingModal extends React.Component {
 
@@ -17,7 +15,7 @@ class BookingModal extends React.Component {
 
   render() {
     const isOpen = this.props.isOpen !== null ? true : false;
-    const { toggle, className, show = {} } = this.props;
+    const { toggle, show = {} } = this.props;
     return show === null ? null : (
       <FinalForm
         onSubmit={this.submitForm}
@@ -25,7 +23,7 @@ class BookingModal extends React.Component {
         render={({ handleSubmit, pristine, reset, submitting, values, ...rest }) => {
           return (
             <Form onSubmit={handleSubmit} ref={form => {this.form = form}}>
-              <Modal isOpen={isOpen} toggle={toggle} className={className} size='lg' >
+              <Modal isOpen={isOpen} toggle={toggle} className='booking-modal' size='lg' >
                 <ModalHeader toggle={toggle}>Varaa lippuja - {show.title}</ModalHeader>
                 <ModalBody>
                   <Table striped>
@@ -41,8 +39,8 @@ class BookingModal extends React.Component {
                       <tr>
                         <td>{show.theatre}</td>
                         <td>{show.auditorium}</td>
-                        <td>{moment(show.showStart).format('D.M.YYYY')}</td>
-                        <td>{moment(show.showStart).format('H:mm')} - {moment(show.showEnd).format('H:mm')}</td>
+                        <td>{dateToStr(show.showStart)}</td>
+                        <td>{timeToStr(show.showStart)} - {timeToStr(show.showEnd)}</td>
                       </tr>
                     </tbody>
                   </Table>

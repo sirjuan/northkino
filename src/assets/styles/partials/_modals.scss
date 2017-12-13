@@ -1,0 +1,68 @@
+.modal {
+  .modal-header {
+    border-color: rgba($white, 0.6);
+  }
+  .modal-content {
+    background-color: rgba($white, 0.99);
+  }
+  .modal-footer {
+    border-color: rgba($white, 0.6);
+  }
+  .modal-body {
+    max-height: 620px;
+    overflow-y: auto;
+  }
+  .table {
+    th {
+      border-top: none;
+      border-bottom-width: 1px !important;
+      padding-bottom: 6px;
+    }
+    td {
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+  }
+}
+
+.modal-backdrop.modal-bd-dark.show {
+  opacity: 0.8;
+}
+
+.booking-modal {
+  td, th {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+.thank-you-modal {
+  text-align: center;
+  margin: 200px auto;
+  .modal.fade .modal-dialog {
+    transition: transform 0.8s ease-out !important;
+    transform: translate(0, -100%) !important;
+  }
+  .modal.fade.show {
+    transition: opacity 0.4s !important;
+  }
+  .modal-header {
+    button.close {
+      display: none;
+    }
+    display: block;
+    border: none;
+  }
+  .modal-content {
+    background-color: rgba($white, 0.2);
+    color: white;
+  }
+  .modal-footer {
+    border: none;
+    display: block;
+  }
+  select {
+    background-color: $light-transparent;
+    color: white;
+  }
+}
