@@ -12,6 +12,7 @@ Demo is running at [https://northkino.herokuapp.com/](https://northkino.herokuap
 
 ```
 git clone git@github.com:sirjuan/northkino.git
+cd northkino
 npm install
 npm run start-dev
 ```
